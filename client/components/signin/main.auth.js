@@ -11,6 +11,7 @@ angular.module('main.auth', [
     Auth.signin($scope.user)
     .then(function(result) {
       if (result.success) {
+        console.log('result is successful')
         $location.path('/about');
       } else {
         $scope.signinFormError = true;
@@ -29,12 +30,15 @@ angular.module('main.auth', [
     signin: function (user) {
       return $http({
         method: 'POST',
-        url: 'http://t001-005-001-02a.elasticbeanstalk.com/api',
-        data: user
+        url: '/proxy',
+        data: {
+          authServer: 'http://t001-005-001-02a.elasticbeanstalk.com/api',
+          user: user
+        }
       })
       .then(function(result){
-        if (result.success) authenticated = true;
-        return result;
+        if (result.data.success) authenticated = true;
+        return result.data;
       });
     },
     isAuth: function () {
