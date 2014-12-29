@@ -1,9 +1,7 @@
 <!-- Sidebars -->
-<div ng-include="'components/main/sidebar.html'" 
-        ui-track-as-search-param='true'
-        class="sidebar sidebar-left"></div>
+<div ng-include="'components/main/sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
 
-<div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
+<div class="app">
 
   <!-- Navbars -->
 
@@ -12,7 +10,7 @@
       Simple AngularJS App
     </div>
     <div class="btn-group pull-left">
-      <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+      <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
         <i class="fa fa-bars"></i> Menu
       </div>
     </div>
