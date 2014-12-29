@@ -1,3 +1,14 @@
-<div>
-  Welcome!
+<div id='signOnContainer'>
+
+  <h1> Welcome to this Angular Mobile UI App - please sign in: </h1>
+
+  <form ng-show="!isAuth()" accept-charset="UTF-8" name="signinForm" ng-submit="signin()">
+    <input name="email" type="text" class="form-control" placeholder="email" ng-model='user.email' ng-pattern="/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+    <span class="form-error" ng-show="signinForm.name.$error.pattern">Please enter a valid email address</span>
+    <input name="password" type="password" class="form-control" placeholder="password" ng-model='user.password' ng-minlength="6" required>
+    <span class="form-error" ng-show="signinForm.password.$error.minlength">Minimum password length is 6 characters</span>
+    <button ng-disabled='signinForm.$invalid' class="btn btn-material-teal btn-block" id="sign-in" type="submit">Sign In</button>
+    <span class="form-error" ng-show="signinFormError">{{message}}</span>
+  </form>
+
 </div>
