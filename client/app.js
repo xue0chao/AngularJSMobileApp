@@ -25,22 +25,7 @@ angular.module('main', [
     redirectTo: '/about'
   }); 
 
-  $httpProvider.interceptors.push('AttachHeader');
-
-})
-
-.factory('AttachHeader', function(){
-
-  return {
-    request: function (object) {
-      object.headers['Allow-Control-Allow-Origin'] = '*';
-      return object;
-    },
-    response: function (object) {
-      object.headers['Access-Control-Allow-Origin'] = '*';
-      return object;
-    }
-  };
+  $httpProvider.defaults.useXDomain = true;
 
 })
 
