@@ -1,0 +1,25 @@
+{
+  "name": "AngularJSMobileApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xue0chao/AngularJSMobileApp",
+  "authors": [
+    "Chao Xue <xuechao@alum.mit.edu>"
+  ],
+  "description": "Simple mobile app written with AngularJS and Angular Mobile UI for Sipree's pre-interview exercise",
+  "main": "client/index.html",
+  "keywords": [
+    "AngularJS",
+    "Mobile-Angular-UI"
+  ],
+  "license": "Public Domain",
+  "ignore": [
+    "**/.*",
+    "client/bower_components",
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": "~1.3.5",
+    "mobile-angular-ui": "~1.1.0-beta.30",
+    "angular-route": "~1.3.8"
+  }
+}

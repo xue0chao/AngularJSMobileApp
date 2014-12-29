@@ -1,0 +1,30 @@
+<!-- Sidebars -->
+<div ng-include="'components/main/sidebar.html'" 
+        ui-track-as-search-param='true'
+        class="sidebar sidebar-left"></div>
+
+<div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
+
+  <!-- Navbars -->
+
+  <div class="navbar navbar-app navbar-absolute-top">
+    <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+      Simple AngularJS App
+    </div>
+    <div class="btn-group pull-left">
+      <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+        <i class="fa fa-bars"></i> Menu
+      </div>
+    </div>
+  </div>
+
+  <!-- App Body -->
+  <div class="app-body">
+    <div class="app-content">
+      <p>Click items on the menu to view pages in this app.</p>
+    </div>
+  </div>
+
+</div>
+
+<div ui-yield-to="modals"></div>
